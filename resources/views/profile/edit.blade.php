@@ -8,7 +8,7 @@
     <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <!-- Додаємо кнопку для створення запиту допомоги для ветеранів -->
-        @if(auth()->user()->role === \App\Enums\UserRole::VETERAN->value)
+        @if(auth()->user()->role === \App\Enums\UserRole::VETERAN)
         <div class="flex justify-end">
             <x-primary-button>
                 <a href="{{ route('help-requests.create') }}" class="text-white">
@@ -60,7 +60,7 @@
 
     <!-- Include Veteran Profile Form Component if user is a veteran -->
 
-    @if(auth()->user()->role === \App\Enums\UserRole::VETERAN->value)
+    @if(auth()->user()->role === \App\Enums\UserRole::VETERAN)
         <div class="mt-6">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
@@ -248,7 +248,7 @@
     @endif
 
     <!-- Додаємо блок зі списком запитів допомоги для волонтера -->
-    @if(auth()->user()->role === \App\Enums\UserRole::VOLUNTEER->value)
+    @if(auth()->user()->role === \App\Enums\UserRole::VOLUNTEER)
   <!-- Список запитів допомоги волонтера -->
                 @php
                     // Change to paginate instead of get()

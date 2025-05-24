@@ -208,8 +208,8 @@
                         <strong>{{ Str::limit($request->title, 50) }}</strong><br>
                         <span class="text-sm">{{ __('Категорія') }}: {{ $request->category->name ?? __('Н/Д') }}</span><br>
                         <span class="text-sm">{{ __('Статус') }}: {{ $statusLabel }}</span><br>
-                        <a href="{{ route('help-requests.show', $request->id) }}" class="text-sm text-indigo-600">{{ __('Детальніше') }}</a>
                         @if($request->status === \App\Enums\HelpRequestStatus::PENDING->value && Auth::user()->isVolunteer() && !$request->volunteer_id)
+                            <a href="{{ route('help-requests.show', $request->id) }}" class="text-sm text-indigo-600">{{ __('Детальніше') }}</a>
                             <br><a href="{{ route('help-requests.show', $request->id) }}" class="text-sm text-green-600">{{ __('Взяти запит') }}</a>
                         @endif
                         `);
